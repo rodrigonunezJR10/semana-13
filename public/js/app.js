@@ -10,3 +10,15 @@ links.forEach(link => {
     document.getElementById(pageId).classList.add('active');
   });
 });
+// Animación básica para las tarjetas al pasar el mouse (Paso 11)
+const cards = document.querySelectorAll('.project-card');
+
+cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.classList.add('destacada');
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.classList.remove('destacada');
+    });
+});
