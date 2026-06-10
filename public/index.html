@@ -1,60 +1,35 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Portafolio</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <header>
-    <h1>Mi Portafolio Personal</h1>
-    <nav>
-      <a href="#inicio" data-page="inicio">Inicio</a>
-      <a href="#sobre-mi" data-page="sobre-mi">Sobre mí</a>
-      <a href="#proyectos" data-page="proyectos">Proyectos</a>
-      <a href="#contacto" data-page="contacto">Contacto</a>
-    </nav>
-  </header>
-
-  <main>
+<main>
     <section id="inicio" class="page active">...</section>
     <section id="sobre-mi" class="page">...</section>
-    <section id="proyectos" class="page">...
+    
+    <section id="proyectos" class="page">
         <div class="project-card">
-        <h3>Sistema de ventas</h3>
-        <p>Aplicación web para registrar productos y ventas.</p>
-        <p>Tecnologías: HTML, CSS, JS, Node.js y MySQL.</p>
+            <h3>Sistema de ventas</h3>
+            <p>Aplicación web para registrar productos y ventas.</p>
+            <p>Tecnologías: HTML, CSS, JS, Node.js y MySQL.</p>
         </div>
 
         <div class="project-card">
-        <h3>Gestor de tareas</h3>
-        <p>Aplicación para organizar tareas académicas.</p>
-        <p>Tecnologías: HTML, CSS y JavaScript.</p>
+            <h3>Gestor de tareas</h3>
+            <p>Aplicación para organizar tareas académicas.</p>
+            <p>Tecnologías: HTML, CSS y JavaScript.</p>
         </div>
-
     </section>
 
     <section id="contacto" class="page">
+      <div id="alerta" class="alerta"></div>
+
       <form id="contactForm">
-        <div id="alerta" class="alerta"></div>
-        <label>Nombre</label>
+        <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre" required>
 
-        <label>Correo</label>
+        <label for="email">Correo</label>
         <input type="email" id="email" name="email" required>
 
-        <label>Mensaje</label>
+        <label for="mensaje">Mensaje</label>
         <textarea id="mensaje" name="mensaje" required></textarea>
 
         <button type="submit">Enviar mensaje</button>
       </form>
-      <div id="alerta" class="alerta"></div>
-
-
     </section>
   </main>
-
-  <script src="js/app.js"></script>
-</body>
-</html>
