@@ -1,5 +1,22 @@
+// LÓGICA DE NAVEGACIÓN
+const enlaces = document.querySelectorAll('nav a');
+const paginas = document.querySelectorAll('.page');
 
-//ANIMACIÓN DE LAS TARJETAS DE PROYECTOS( aqui es donde hacemos que tarjetas o botones se eleven y tengan como esa sombrita para que sea animacion)
+enlaces.forEach(enlace => {
+    enlace.addEventListener('click', (e) => {
+        e.preventDefault();
+        const paginaDestino = enlace.getAttribute('data-page');
+
+        paginas.forEach(p => p.classList.remove('active'));
+
+        const paginaActual = document.getElementById(paginaDestino);
+        if (paginaActual) {
+            paginaActual.classList.add('active');
+        }
+    });
+});
+
+//ANIMACIÓN DE LAS TARJETAS DE PROYECTOS( aqui es donde hacemos que tarjetas o botones se elevate u tengan como esa sombrita para que sea animacion)
 // Buscamos todas las tarjetas que tengan la clase .project-card en el HTML(las que dije arribita,Como dato el periodo que dura entre que sube y baa es de 0.25 seg, por eso parece animada)
 const cards = document.querySelectorAll('.project-card');
 
@@ -22,14 +39,16 @@ cards.forEach(card => {
 // Función reutilizable para mostrar mensajes en pantalla (sin usar el alert feo de Windowsaksjlaks)
 function mostrarAlerta(mensaje, tipo) {
     const alerta = document.getElementById('alerta'); // Buscamos el contenedor único del HTML
-    alerta.textContent = mensaje;                     // Le inyectamos el texto dinámico
-    alerta.className = 'alerta ' + tipo;              
-    alerta.classList.add('visible');                  // Le agregamos la clase que la muestra con CSS
+    if (alerta) {
+        alerta.textContent = mensaje;                     // Le inyectamos el texto dinámico
+        alerta.className = 'alerta ' + tipo;              
+        alerta.classList.add('visible');                  // Le agregamos la clase que la muestra con CSS
 
-    // Usamos un temporizador para que la alerta se oculte sola después de 3 segundos (3000 milisegundos)
-    setTimeout(() => {
-        alerta.classList.remove('visible');
-    }, 3000);
+        // Usamos un temporizador para que la alerta se oculte sola después de 3 segundos (3000 milisegundos)
+        setTimeout(() => {
+            alerta.classList.remove('visible');
+        }, 3000);
+    }
 }
 
 
